@@ -1,0 +1,67 @@
+package practice;
+
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MapExample 
+{
+	public static void main(String[] args)
+	{
+		Map<Integer,String> m= new HashMap<Integer,String>();
+		m.put(10, "arun");
+		m.put(20, "bubby");
+		m.put(30, "archana");
+		System.out.println("Map:"+m);
+		/*System.out.println(m.get(20));
+		System.out.println(m.remove(10));
+		System.out.println(m.isEmpty());
+		System.out.println(m.containsKey(10));
+		System.out.println(m.containsValue("bubby"));*/
+		System.out.println(m.keySet());
+		System.out.println(m.values());
+		System.out.println(m.size());
+		Set<Entry<Integer, String>> s=m.entrySet();
+		//List l= new ArrayList<Integer,String>(s);
+		ArrayList<Map.Entry<Integer, String>> list=new ArrayList<Map.Entry<Integer, String>>(s);
+		for(Map.Entry<Integer, String> keys:list)
+		{
+			System.out.println(keys.getKey()+": "+keys.getValue());
+		}
+		//Collections.sort(list, new OwnComparator());
+		Collections.sort(list, new Comparator<Map.Entry<Integer, String>>()
+		{
+
+			@Override
+			public int compare(Entry<Integer, String> o1, Entry<Integer, String> o2) 
+			{
+				// TODO Auto-generated method stub
+				return o2.getValue().compareTo(o1.getValue());
+			}
+			
+		}               );
+		for(Map.Entry<Integer, String> keys:list)
+		{
+			System.out.println("After ascending order-->"+keys.getKey()+": "+keys.getValue());
+		}
+	}
+
+	
+}
+/*class OwnComparator implements Comparator
+{
+
+	@Override
+	public int compare(Object arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		Map.Entry<Integer, String> s1=(Map.Entry<Integer, String>)arg0;
+		Map.Entry<Integer, String> s2=(Map.Entry<Integer, String>)arg1;
+		return -(s1.getKey().compareTo(s2.getKey()));
+	}
+	
+}*/

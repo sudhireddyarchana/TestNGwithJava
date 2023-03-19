@@ -1,0 +1,24 @@
+package practicetestng;
+
+import org.testng.annotations.Test;
+
+public class SuccessPercentage
+{
+	public int i=0;
+@Test(description="percentage",successPercentage=100,invocationCount=5)
+public void method5()
+{
+	//for(int i=0;i<=10;i++)
+	{
+	if(i%2==0)
+	{
+	System.out.println("test passed"+i);		
+	}else {
+	System.out.println("test failed"+i);
+	}
+	i++;
+	}
+	}
+	}
+
+

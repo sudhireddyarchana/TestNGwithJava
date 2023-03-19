@@ -1,0 +1,19 @@
+package javaPrograms;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapExample {
+
+	public static void main(String[] args)
+	{
+	Map<Integer,String> m= new HashMap<Integer,String>();
+	m.put(10, "bubby");
+	m.put(20, "archana");
+	m.put(10, "arun");
+	m.put(10, "reddy");
+	System.out.println(m);
+
+	}
+
+}

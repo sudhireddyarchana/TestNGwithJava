@@ -1,0 +1,10 @@
+package classes;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class StepClass1 
+{
+RemoteWebDriver driver;
+
+
+}

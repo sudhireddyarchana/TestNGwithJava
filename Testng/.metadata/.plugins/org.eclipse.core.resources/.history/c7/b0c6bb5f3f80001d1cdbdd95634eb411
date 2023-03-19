@@ -1,0 +1,4 @@
+Feature:sample feature
+Scenario:sample scenario
+Given open browser
+When launch site "https://www.google.com"

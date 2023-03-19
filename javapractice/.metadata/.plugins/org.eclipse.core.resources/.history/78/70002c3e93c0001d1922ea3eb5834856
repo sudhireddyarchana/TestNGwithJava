@@ -1,0 +1,50 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MapExample {
+
+	public static void main(String[] args)
+	{
+	Map<Integer,String> m= new HashMap<Integer,String>();
+	m.put(10, "bubby");
+	m.put(20, "archana");
+	m.put(30, "arun");
+	m.put(40, "reddy");
+	System.out.println(m);
+	System.out.println(m.get(10));
+	System.out.println(m.containsKey(20));
+	System.out.println(m.containsValue("arun"));
+	System.out.println(m.keySet());
+	System.out.println(m.values());
+	System.out.println(m.entrySet());
+	Set<Map.Entry<Integer,String>> s=m.entrySet();
+	List<Map.Entry<Integer,String>> l=new ArrayList(s);
+	for(Map.Entry<Integer,String> pair:l)
+	{
+		System.out.println("based on key :value "+pair.getKey()+":"+pair.getValue());
+		//System.out.println("based on value :key "+pair.getValue()+":"+pair.getKey());
+	}
+    Collections.sort(l, new Comparator<Map.Entry<Integer,String>>(){
+
+		@Override
+		public int compare(Entry<Integer, String> o1, Entry<Integer, String> o2) {
+			// TODO Auto-generated method stub
+			return -(o1.getKey().compareTo(o2.getKey()));
+		}
+    	
+    });
+   for(Map.Entry<Integer,String> list:l)
+   {
+	  System.out.println("ascending order:"+list.getKey()+":"+list.getValue()); 
+   }
+	}
+
+}
